@@ -192,25 +192,28 @@ label, .stSelectbox label, .stNumberInput label,
 @st.cache_resource
 def load_model():
     import pickle, os
-
-    model_path   = 'best_model_lr90.pkl'
-    features_path = 'X_train_s_vif.csv'
+    model_path = 'best_model_lr90.pkl'
 
     if not os.path.exists(model_path):
         st.error(f"Model file not found: {model_path}")
-        st.stop()
-    if not os.path.exists(features_path):
-        st.error(f"Feature file not found: {features_path}")
         st.stop()
 
     with open(model_path, 'rb') as f:
         pipe = pickle.load(f)
 
-    feature_cols = pd.read_csv(features_path).columns.tolist()
+    # Feature names hardcoded — no CSV file needed
+    feature_cols = [
+        'roll90_worked_hrs', 'daily_charge_hours_budget', 'roll90_bill_ratio',
+        'worked_hours', 'billable_hours', 'wip_hours', 'roll90_matters',
+        'roll7_bill_ratio_cmp', 'service_years', 'seniority_enc',
+        'day_of_week', 'quarter', 'is_weekend', 'is_month_end',
+        'is_year_end', 'is_qtr_end', 'loc_102', 'loc_103', 'loc_104',
+        'loc_105', 'loc_106', 'loc_107', 'loc_109', 'loc_112',
+        'loc_117', 'loc_199', 'pg_2', 'pg_3', 'pg_4'
+    ]
 
-    st.sidebar.success("✅ Real model loaded")
     return pipe, feature_cols
-  
+
 model, FCOLS = load_model()
 
 LOC = {
