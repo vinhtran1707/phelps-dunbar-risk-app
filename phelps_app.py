@@ -279,19 +279,19 @@ svc   = e.number_input("Service Years", 0.0, 40.0, 5.0, 0.5)
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
 # Row 2
+# Row 2
 f2, g2, h2, i2, j2 = st.columns([1.4, 1.4, 0.9, 0.9, 0.9])
 day_l = f2.selectbox("Day of Week", list(DAY.keys()))
 qtr_l = g2.selectbox("Quarter",    list(QTR.keys()))
-me    = h2.checkbox("Month-End",
-          help="Check if today is one of the last 3 days of the month. "
-               "Attorneys push billing before month close — slight positive signal.")
-ye    = i2.checkbox("Year-End",
-          help="Check if today is in December. Strongest goal attainment "
-               "month firm-wide (50.7%). Positive signal.")
-qe    = j2.checkbox("Qtr-End",
-          help="Check if today is the last few days of a quarter "
-               "(end of March, June, Sep, or Dec). Similar to Month-End.")
 
+me = h2.checkbox("Month-End")
+h2.markdown("<small style='color:#2E4F8A;font-size:0.72rem'>📅 Last 3 days of month.<br>Slightly positive signal.</small>", unsafe_allow_html=True)
+
+ye = i2.checkbox("Year-End")
+i2.markdown("<small style='color:#2E4F8A;font-size:0.72rem'>📅 December only.<br>Strongest month (50.7%).</small>", unsafe_allow_html=True)
+
+qe = j2.checkbox("Qtr-End")
+j2.markdown("<small style='color:#2E4F8A;font-size:0.72rem'>📅 Last days of Mar/<br>Jun/Sep/Dec.</small>", unsafe_allow_html=True)
 
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
