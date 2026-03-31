@@ -282,9 +282,16 @@ st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 f2, g2, h2, i2, j2 = st.columns([1.4, 1.4, 0.9, 0.9, 0.9])
 day_l = f2.selectbox("Day of Week", list(DAY.keys()))
 qtr_l = g2.selectbox("Quarter",    list(QTR.keys()))
-me    = h2.checkbox("Month-End")
-ye    = i2.checkbox("Year-End")
-qe    = j2.checkbox("Qtr-End")
+me    = h2.checkbox("Month-End",
+          help="Check if today is one of the last 3 days of the month. "
+               "Attorneys push billing before month close — slight positive signal.")
+ye    = i2.checkbox("Year-End",
+          help="Check if today is in December. Strongest goal attainment "
+               "month firm-wide (50.7%). Positive signal.")
+qe    = j2.checkbox("Qtr-End",
+          help="Check if today is the last few days of a quarter "
+               "(end of March, June, Sep, or Dec). Similar to Month-End.")
+
 
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
@@ -292,17 +299,27 @@ st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 k3, l3, m3, n3 = st.columns(4)
 wh = k3.number_input("Hours Worked Today",       0.0, 24.0,  8.5, 0.5)
 bh = l3.number_input("Billable Hours Today",      0.0, 24.0,  7.0, 0.5)
-wp = m3.number_input("WIP Hours (unbilled)",      0.0, 100.0, 10.0, 0.5)
+wp = m3.number_input("WIP Hours (unbilled)", 0.0, 100.0, 10.0, 0.5,
+       help="Billable hours completed but not yet invoiced. "
+            "High WIP = backlog ready to convert. Healthy: 8+ hrs.")
 db = n3.number_input("Daily Charge Hours Budget", 0.0, 15.0,  8.0, 0.5)
 
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
 # Row 4
 o4, p4, q4, r4 = st.columns(4)
-rw = o4.slider("90-Day Avg Worked Hrs/Day",   0.0, 18.0, 9.5,  0.1)
-rb = p4.slider("90-Day Avg Billing Ratio",    0.0,  1.0, 0.78, 0.01, format="%.2f")
-rm = q4.slider("90-Day Avg Matter Count/Day", 0.0, 15.0, 5.0,  0.1)
-r7 = r4.slider("7-Day Avg Billing Ratio",     0.0,  1.0, 0.75, 0.01, format="%.2f")
+rw = o4.slider("90-Day Avg Worked Hrs/Day", 0.0, 18.0, 9.5, 0.1,
+               help="Avg total hours worked per day over 90 days. "
+                    "The #1 predictor in the model. Healthy: 9.0+ hrs/day.")
+rb = p4.slider("90-Day Avg Billing Ratio", 0.0, 1.0, 0.78, 0.01, format="%.2f",
+               help="% of worked hours billed to clients, averaged over 90 days. "
+                    "Healthy: 70%+. Below 70% triggers a recommendation.")
+rm = q4.slider("90-Day Avg Matter Count/Day", 0.0, 15.0, 5.0, 0.1,
+               help="Avg active client matters billed per day over 90 days. "
+                    "Below 4.5 is the critical threshold — thin pipeline drives most misses.")
+r7 = r4.slider("7-Day Avg Billing Ratio", 0.0, 1.0, 0.75, 0.01, format="%.2f",
+               help="Short-term billing trend over the past 7 days. "
+                    "A drop here vs the 90-day avg is an early warning sign.")
 
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
