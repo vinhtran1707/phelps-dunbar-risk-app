@@ -141,11 +141,11 @@ label, .stSelectbox label, .stNumberInput label,
 [data-testid="stSlider"] [class*="Track"] > div {
     background-color: #0047bb !important;
 }
-/* Override the thumb dot */
+/* Override the thumb dot — white with blue border */
 [data-testid="stSlider"] [class*="Thumb"] {
-    background-color: #0047bb !important;
+    background-color: #FFFFFF !important;
     border-color: #0047bb !important;
-    box-shadow: 0 0 0 3px rgba(0,71,187,0.2) !important;
+    box-shadow: 0 0 0 3px rgba(0,71,187,0.15) !important;
 }
 /* Light unfilled track */
 [data-testid="stSlider"] [class*="Track"] > div:last-child {
