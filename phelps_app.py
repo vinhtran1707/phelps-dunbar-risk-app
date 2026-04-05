@@ -126,24 +126,26 @@ label, .stSelectbox label, .stNumberInput label,
 .fi { text-align:center; }
 .fl { font-size:0.65rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.08em; }
 .fv { font-size:0.85rem; color:#E8B85A; font-weight:600; }
-/* Phelps blue sliders */
-.stSlider [data-baseweb="slider"] [role="slider"] {
-    background-color: #0047bb !important;
-    border-color: #0047bb !important;
-}
-.stSlider [data-baseweb="slider"] div[class*="thumb"] {
-    background-color: #0047bb !important;
-    border-color: #0047bb !important;
-}
-.stSlider [data-baseweb="slider"] div[class*="track"] div {
-    background-color: #0047bb !important;
-}
-[data-testid="stSlider"] div[class*="StyledSliderTrack"] > div:first-child {
-    background: #0047bb !important;
-}
-[data-testid="stSlider"] div[role="slider"] {
+/* Phelps blue sliders — full override */
+[data-testid="stSlider"] [role="slider"] {
     background: #0047bb !important;
     border-color: #0047bb !important;
+}
+[data-testid="stSlider"] div[data-baseweb="slider"] > div > div > div {
+    background: #0047bb !important;
+}
+[data-testid="stSlider"] div[data-baseweb="slider"] > div > div:first-child > div:first-child {
+    background: #0047bb !important;
+}
+/* Override the red filled track */
+[data-testid="stSlider"] [class*="Track"] > div {
+    background-color: #0047bb !important;
+}
+/* Override the thumb dot */
+[data-testid="stSlider"] [class*="Thumb"] {
+    background-color: #0047bb !important;
+    border-color: #0047bb !important;
+    box-shadow: 0 0 0 3px rgba(0,71,187,0.2) !important;
 }
 </style>
 """, unsafe_allow_html=True)
