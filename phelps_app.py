@@ -126,6 +126,25 @@ label, .stSelectbox label, .stNumberInput label,
 .fi { text-align:center; }
 .fl { font-size:0.65rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.08em; }
 .fv { font-size:0.85rem; color:#E8B85A; font-weight:600; }
+/* Phelps blue sliders */
+.stSlider [data-baseweb="slider"] [role="slider"] {
+    background-color: #0047bb !important;
+    border-color: #0047bb !important;
+}
+.stSlider [data-baseweb="slider"] div[class*="thumb"] {
+    background-color: #0047bb !important;
+    border-color: #0047bb !important;
+}
+.stSlider [data-baseweb="slider"] div[class*="track"] div {
+    background-color: #0047bb !important;
+}
+[data-testid="stSlider"] div[class*="StyledSliderTrack"] > div:first-child {
+    background: #0047bb !important;
+}
+[data-testid="stSlider"] div[role="slider"] {
+    background: #0047bb !important;
+    border-color: #0047bb !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
