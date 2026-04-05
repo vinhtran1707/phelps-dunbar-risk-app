@@ -265,7 +265,7 @@ st.markdown("""
   </div>
   <div class="gold-bar"></div>
   <div>
-    <p class="hdr-sub">HR Analytics Platform &nbsp;(Concept by Vinh Tran &amp; Reese Hathaway)</p>
+    <p class="hdr-sub">Attorney Risk Assessment &nbsp;(Concept by Vinh Tran &amp; Reese Hathaway)</p>
     <p class="hdr-meta">90-day Logistic Regression &nbsp;·&nbsp; 75.7% Accuracy &nbsp;·&nbsp; AUC 0.842</p>
   </div>
 </div>
