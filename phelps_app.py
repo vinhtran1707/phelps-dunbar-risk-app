@@ -65,7 +65,8 @@ label, .stSelectbox label, .stNumberInput label,
 .block-container { padding: 1rem 2rem 2rem 2rem !important; max-width: 1400px !important; }
 
 .app-header {
-    background: #0047bb;
+    background: #0047bb url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104'%3E%3Cpolygon points='60,0 120,104 0,104' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='1'/%3E%3Cpolygon points='0,0 60,104 120,0' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='1'/%3E%3Cpolygon points='0,0 120,0 60,104' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'/%3E%3C/svg%3E") repeat;
+    background-size: 120px 104px;
     border-radius: 8px;
     padding: 1.4rem 2.2rem;
     margin-bottom: 1.6rem;
@@ -264,7 +265,7 @@ st.markdown("""
   </div>
   <div class="gold-bar"></div>
   <div>
-    <p class="hdr-sub">Attorney Risk Assessment</p>
+    <p class="hdr-sub">HR Analytics Platform &nbsp;(Concept by Vinh Tran &amp; Reese Hathaway)</p>
     <p class="hdr-meta">90-day Logistic Regression &nbsp;·&nbsp; 75.7% Accuracy &nbsp;·&nbsp; AUC 0.842</p>
   </div>
 </div>
