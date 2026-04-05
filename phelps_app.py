@@ -283,7 +283,7 @@ svc   = e.number_input("Service Years", 0.0, 40.0, 5.0, 0.5)
 
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
-# Row 2
+
 # Row 2
 f2, g2, h2, i2, j2 = st.columns([1.4, 1.4, 0.9, 0.9, 0.9])
 day_l = f2.selectbox("Day of Week", list(DAY.keys()))
@@ -311,20 +311,32 @@ db = n3.number_input("Daily Charge Hours Budget", 0.0, 15.0,  8.0, 0.5)
 
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
-# Row 4
+# Row 4 — number input + slider for each field
 o4, p4, q4, r4 = st.columns(4)
-rw = o4.slider("90-Day Avg Worked Hrs/Day", 0.0, 18.0, 9.5, 0.1,
-               help="Avg total hours worked per day over 90 days. "
-                    "The #1 predictor in the model. Healthy: 9.0+ hrs/day.")
-rb = p4.slider("90-Day Avg Billing Ratio", 0.0, 1.0, 0.78, 0.01, format="%.2f",
-               help="% of worked hours billed to clients, averaged over 90 days. "
-                    "Healthy: 70%+. Below 70% triggers a recommendation.")
-rm = q4.slider("90-Day Avg Matter Count/Day", 0.0, 15.0, 5.0, 0.1,
-               help="Avg active client matters billed per day over 90 days. "
-                    "Below 4.5 is the critical threshold — thin pipeline drives most misses.")
-r7 = r4.slider("7-Day Avg Billing Ratio", 0.0, 1.0, 0.75, 0.01, format="%.2f",
-               help="Short-term billing trend over the past 7 days. "
-                    "A drop here vs the 90-day avg is an early warning sign.")
+
+with o4:
+    rw = st.number_input("90-Day Avg Worked Hrs/Day", 0.0, 14.0, 9.5, 0.1,
+                         help="Avg total hours worked per day over 90 days. "
+                              "The #1 predictor in the model. Healthy: 9.0+ hrs/day.")
+    rw = st.slider("##rw", 0.0, 14.0, rw, 0.1, label_visibility="collapsed")
+
+with p4:
+    rb = st.number_input("90-Day Avg Billing Ratio", 0.0, 1.0, 0.78, 0.01, format="%.2f",
+                         help="% of worked hours billed to clients, averaged over 90 days. "
+                              "Healthy: 70%+. Below 70% triggers a recommendation.")
+    rb = st.slider("##rb", 0.0, 1.0, rb, 0.01, label_visibility="collapsed")
+
+with q4:
+    rm = st.number_input("90-Day Avg Matter Count/Day", 0.0, 15.0, 5.0, 0.1,
+                         help="Avg active client matters billed per day over 90 days. "
+                              "Below 4.5 is the critical threshold — thin pipeline drives most misses.")
+    rm = st.slider("##rm", 0.0, 15.0, rm, 0.1, label_visibility="collapsed")
+
+with r4:
+    r7 = st.number_input("7-Day Avg Billing Ratio", 0.0, 1.0, 0.75, 0.01, format="%.2f",
+                         help="Short-term billing trend over the past 7 days. "
+                              "A drop here vs the 90-day avg is an early warning sign.")
+    r7 = st.slider("##r7", 0.0, 1.0, r7, 0.01, label_visibility="collapsed")
 
 st.markdown('<hr class="input-divider">', unsafe_allow_html=True)
 
