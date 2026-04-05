@@ -65,7 +65,7 @@ label, .stSelectbox label, .stNumberInput label,
 .block-container { padding: 1rem 2rem 2rem 2rem !important; max-width: 1400px !important; }
 
 .app-header {
-    background: linear-gradient(135deg, #13294b 0%, #0047bb 100%);
+    background: #0047bb;
     border-radius: 8px;
     padding: 1.4rem 2.2rem;
     margin-bottom: 1.6rem;
@@ -75,7 +75,7 @@ label, .stSelectbox label, .stNumberInput label,
     border-bottom: 4px solid #C8993A;
     box-shadow: 0 2px 12px rgba(0,71,187,0.25);
 }
-.firm-name { font-family: 'Merriweather', serif; font-size: 1.8rem; font-weight: 700; color: #FFFFFF !important; margin: 0; }
+.firm-name { font-family: 'Helvetica', serif; font-size: 1.8rem; font-weight: 700; color: #FFFFFF !important; margin: 0; }
 .hdr-sub { font-size:0.76rem; color:#E8B85A; letter-spacing:0.14em; text-transform:uppercase; margin:0 0 4px 0; font-weight:600; }
 .hdr-meta { font-size:0.80rem; color:rgba(255,255,255,0.60); margin:0; }
 .hdr-proto { font-size:0.70rem; color:rgba(255,255,255,0.40); margin:4px 0 0 0; font-style:italic; }
