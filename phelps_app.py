@@ -147,6 +147,10 @@ label, .stSelectbox label, .stNumberInput label,
     border-color: #0047bb !important;
     box-shadow: 0 0 0 3px rgba(0,71,187,0.2) !important;
 }
+/* Light unfilled track */
+[data-testid="stSlider"] [class*="Track"] > div:last-child {
+    background-color: #99bbee !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
