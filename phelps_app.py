@@ -65,15 +65,20 @@ label, .stSelectbox label, .stNumberInput label,
 .block-container { padding: 1rem 2rem 2rem 2rem !important; max-width: 1400px !important; }
 
 .app-header {
-    background: linear-gradient(135deg, #1F3864 0%, #2E4F8A 100%);
-    border-radius: 8px; padding: 1.4rem 2.2rem; margin-bottom: 1.6rem;
-    display: flex; align-items: center; gap: 1.5rem;
+    background: linear-gradient(135deg, #13294b 0%, #0047bb 100%);
+    border-radius: 8px;
+    padding: 1.4rem 2.2rem;
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     border-bottom: 4px solid #C8993A;
-    box-shadow: 0 2px 12px rgba(31,56,100,0.18);
+    box-shadow: 0 2px 12px rgba(0,71,187,0.25);
 }
-.firm-name { font-family: 'Merriweather', serif; font-size: 1.8rem; font-weight: 700; color: #FFFFFF; margin: 0; }
+.firm-name { font-family: 'Helvetica', serif; font-size: 1.8rem; font-weight: 700; color: #FFFFFF; margin: 0; }
 .hdr-sub { font-size:0.76rem; color:#E8B85A; letter-spacing:0.14em; text-transform:uppercase; margin:0 0 4px 0; font-weight:600; }
 .hdr-meta { font-size:0.80rem; color:rgba(255,255,255,0.60); margin:0; }
+.hdr-proto { font-size:0.70rem; color:rgba(255,255,255,0.40); margin:4px 0 0 0; font-style:italic; }
 .gold-bar { width:2px; height:48px; background:#C8993A; opacity:0.7; border-radius:1px; }
 
 .step-label {
